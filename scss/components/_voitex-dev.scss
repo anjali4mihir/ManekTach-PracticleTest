@@ -1,0 +1,150 @@
+.voitex-dev-section {
+    background-color: $interface-blue;
+    padding-top: 13.5rem;
+    padding-bottom: 13.7rem;
+
+    @include media-down(laptop-large) {
+        padding-top: 6.5rem;
+        padding-bottom: 5.7rem;
+    }
+
+    @include media-down(mobile) {
+        padding-top: 0;
+        padding-bottom: 7.9rem;
+        margin-top: 6rem;
+
+        .row {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .voitex-dev-left-section {
+
+        @include media-down(mobile) {
+            margin-top: -7rem;
+        }
+
+        h2 {
+            @extend %o-title-h2;
+            font-family: family(secondary);
+            max-width: 49.5rem;
+        }
+
+        p {
+            @extend %o-paragraph-medium;
+            opacity: 0.71;
+            letter-spacing: 0.32px;
+            padding-top: 1.4rem;
+
+            @include media-down(mobile) {
+                font-size: size(paragraph, large);
+                line-height: lineheight(paragraph, large);
+                padding-top: 2.5rem;
+            }
+        }
+
+        .voitex-dev-btm {
+            margin-top: 6.5rem;
+
+            @include media-down(laptop-large) {
+                margin-top: 4.5rem;
+            }
+
+            @include media-down(tablet-large) {
+                margin-top: 2.5rem;
+            }
+
+            @include media-down(mobile) {
+                margin-top: 4.2rem;
+            }
+
+            img {
+                height: 3.7rem;
+                width: auto;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+                left: 0;
+
+                @include media-down(laptop-large) {
+                    height: 2.7rem;
+                }
+            }
+
+            p {
+                padding-left: 8.8rem;
+                @extend %o-paragraph-large;
+                opacity: 0.9;
+                padding-top: 0;
+                max-width: 40rem;
+                line-height: 3rem;
+
+                @include media-down(laptop-large) {
+                    line-height: 2.4rem;
+                    padding-left: 6rem;
+                }
+
+                @include media-down(mobile) {
+                    font-size: size(paragraph, large);
+                    line-height: lineheight(paragraph, large);
+                }
+            }
+        }
+
+        .o-button {
+            margin-top: 6rem;
+
+            @include media-down(tablet-large) {
+                margin-top: 4rem;
+            }
+
+            &:hover {
+                color: $interface-pink;
+
+                &:before {
+                    background-color: $interface-white;
+                }
+
+                i {
+                    color: $interface-pink;
+                }
+                
+            }
+        }
+    }
+
+    .voitex-dev-right-section {
+        position: relative;
+
+        svg {
+            width: 46rem;
+            height: auto;
+            position: absolute;
+            top: -3rem;
+            right: 4.6rem;
+            z-index: 1;
+
+            @include media-down(laptop-large) {
+                width: 44rem;
+                top: -4rem;
+                right: 8.6rem;
+            }
+
+            @include media-down(mobile) {
+                width: 32rem;
+                top: 4rem;
+                right: 1.6rem;
+            }
+        }
+
+        img {
+            position: relative;
+            z-index: 2;
+            height: 48rem;
+            width: auto;
+            object-fit: contain;
+        }
+       
+    }
+}

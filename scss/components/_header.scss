@@ -1,0 +1,166 @@
+header {
+    padding-top: 6.1rem;
+    padding-bottom: 4.7rem;
+    z-index: 1;
+    position: relative;
+    transition: top 0.3s ease-in-out; 
+    z-index: 1000;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+        background-color: #ffffff;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    @include media-down(laptop-large) {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+    
+    .navbar-toggler {
+        @include media-down(tablet) {
+            border: 0;
+            position: absolute;
+            right: 2rem;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .nav-main {
+        width: 100%;
+        padding-left: 10rem;
+        padding-right: 10rem;
+
+        @include media-down(laptop-large) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .header-right-section {
+        gap: 15px;
+    }
+
+    .navbar-collapse {
+        flex-grow: initial;
+    }
+    
+    .navbar-expand-lg .navbar-nav .nav-link {
+        @extend %o-paragraph-medium;
+        color: $interface-slate-black;
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+        align-items: center;
+        transition: color 0.3s ease;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $interface-pink;
+            transition: width 0.3s ease;
+        }
+
+        &.dropdown-toggle::after {
+            content: "\e909";
+            font-family: "icommon" !important;
+            font-size: 1.2rem;
+            color: $interface-slate-black;
+            border: 0;
+            transform: rotate(90deg);
+            padding: 0 0 6px 0;
+    
+        }
+
+        &:hover {
+            color: $interface-pink;
+
+            &:before {
+                width: 100%;
+            }
+
+            &.dropdown-toggle::after {
+                color: $interface-pink;
+
+            }
+
+        }
+
+        @include media-down(tablet-large) {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    .navbar-collapse.collapse  {
+        &.show {
+            .navbar-nav {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 83px;
+                background-color: #ffffff;
+                max-height: 100vh;
+                padding: 2rem;
+                box-shadow: 0px 20px 30px rgba(156, 166, 178, 0.2509803922);
+
+                @include media-down(mobile) {
+                    top: 42px;
+                }
+            }
+        }
+    }
+
+    .navbar-brand {
+
+        img {
+            @include media-down(tablet) {
+                height: 2.7rem;
+            }
+        }
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .desktop-menu {
+        @include media-down(mobile) {
+            display: none;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+
+        @include media-down(mobile) {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .nav-item {
+        @include media-down(mobile) {
+            width: 100%;
+        }
+    }
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        width: 100%;
+    }
+}
+
+main {
+    margin-top: -161px;
+}

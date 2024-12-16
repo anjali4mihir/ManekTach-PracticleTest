@@ -1,0 +1,85 @@
+.call-to-action {
+    background-color: #BBBEC50F;
+    padding: 4.7rem 0 2rem 0;
+    margin-top: 10.2rem;
+
+    @include media-down(laptop-large) {
+        margin-top: 2rem;
+    }
+
+    @include media-down(mobile) {
+        margin-top: 8.3rem;
+        padding: 3rem 0 2rem 0;
+
+    }
+
+    .call-action-main {
+
+        @include media-down(mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .call-action-left {
+            padding-left: 10rem;
+
+            @include media-down(laptop-large) {
+                padding-left: 0;
+            }
+
+            h3 {
+                @extend %o-paragraph-large;
+                color: $interface-blue;
+                letter-spacing: 0.4rem;
+                font-family: family(secondary);
+
+                @include media-down(mobile) {
+                    font-size: 1.4rem;
+                    line-height: 1.9rem;
+                    color: #8888FF;
+                    letter-spacing: 0.2rem;
+                }
+            }
+
+            h2 {
+                @extend %o-title-h2;
+                color: $interface-blue;
+                padding-top: 5.1rem;
+                font-family: family(secondary);
+
+                @include media-down(laptop-large) {
+                    padding-top: 3rem;
+                }
+            }
+
+            p {
+                @extend %o-paragraph-medium;
+                color: $interface-blue-dark;
+                padding-top: 3.7rem;
+                max-width: 49.4rem;
+
+                @include media-down(laptop-large) {
+                    padding-top: 2rem;
+                }
+
+                @include media-down(mobile) {
+                    font-size: size(paragraph, large);
+                    line-height: lineheight(paragraph, large);
+                    max-width: 100%;
+                    padding-top: 3rem;
+                }
+
+                &.action-text {
+                    @extend %o-paragraph-exlarge;
+                    color: $interface-pink-dark;
+
+                    @include media-down(mobile) {
+                        font-size: 1.9rem;
+                        line-height: 2.4rem;
+                        padding-top: 2.6rem;
+                    }
+                }
+            }
+        }          
+    }
+}

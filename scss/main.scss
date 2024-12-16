@@ -1,0 +1,29 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import 'abstracts/layout';
+@import 'abstracts/index';
+
+// Settings:
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/type';
+@import 'base/animation';
+
+// components:
+@import 'components/header';
+@import 'components/footer';
+@import 'components/conversation';
+@import 'components/call-to-action';
+@import 'components/homegrown-technologies';
+@import 'components/voitex-solution';
+@import 'components/voitex-dev';
+@import 'components/main-banner';
+@import 'components/human-companies';

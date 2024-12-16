@@ -1,0 +1,161 @@
+$asset-path: 'assets';
+$font-directory: '../fonts';
+$font-size-zero: 0;
+/*Change base font size 16px to 10px for the easy in calculation*/
+$font-size-base: 62.5%;
+
+@font-face {
+  font-family: 'Sharp Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Sharp Sans Bold'), 
+  url('../fonts/SharpSansBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Larsseit';
+  src: url('../fonts/Larsseit.eot');
+  src: url('../fonts/Larsseit.eot') format('embedded-opentype'),
+       url('../fonts/Larsseit.woff2') format('woff2'),
+       url('../fonts/Larsseit.woff') format('woff'),
+       url('../fonts/Larsseit.ttf') format('truetype'),
+       url('../fonts/Larsseit.svg#Larsseit') format('svg');
+}
+
+@font-face {
+  font-family: 'icommon';
+  src:  url('../fonts/icommon.eot?3od81c');
+  src:  url('../fonts/icommon.eot?3od81c#iefix') format('embedded-opentype'),
+    url('../fonts/icommon.ttf?3od81c') format('truetype'),
+    url('../fonts/icommon.woff?3od81c') format('woff'),
+    url('../fonts/icommon.svg?3od81c#icommon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="vt-"], [class*=" vt-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icommon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vt-fb-icon:before {
+  content: "\e900";
+}
+.vt-insta-icon:before {
+  content: "\e901";
+}
+.vt-linkedin-icon:before {
+  content: "\e902";
+}
+.vt-right-arrow:before {
+  content: "\e909";
+}
+
+
+$font-family: (
+  primary: #{'Larsseit'},
+  secondary: #{'Sharp Sans Bold'},
+);
+
+$font-weight: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  extraboldblack: 900,
+);
+
+$font-size: (
+  title: (
+   h1: 6.2rem,
+   h1-laptop: 4.2rem,
+   h1-mobile: 3.8rem,
+   h2: 3.8rem,
+   h2-laptop: 3rem,
+   h3: 3rem,
+   h3-laptop: 2.2rem,
+  ),
+  paragraph: (
+    exlarge: 2rem,
+    large: 1.8rem,
+    large-laptop: 1.6rem,
+    medium: 1.6rem,
+    small: 1.4rem,
+  ),
+);
+
+$line-height: (
+  title: (
+    h1: 6.8rem,
+    h1-laptop: 4.8rem,
+    h1-mobile: 4.4rem,
+    h2: 4.4rem,
+    h2-laptop: 3.8rem,
+    h3: 4.4rem,
+    h3-laptop: 2.8rem,
+  ),
+  paragraph: (
+    exlarge: 2.5rem,
+    large: 2.4rem,
+    large-laptop: 2.2rem,
+    medium: 2rem,
+    small: 2.6rem,
+  ),
+);
+
+@mixin font($family: null, $type: null, $size: null, $weight: null) {
+  @if $family {
+    font-family: family($family);
+  }
+  @if $type and $size {
+    font-size: map-get(map-get($font-size, $type), $size);
+  }
+  @if $weight {
+    font-weight: weight($weight); /* stylelint-disable-line */
+  }
+}
+
+@function weight($key) {
+  @if map-has-key($font-weight, $key) {
+    @return map-get($font-weight, $key);
+  }
+  @warn 'Unknown `#{$key}` in $font-weight.';
+  @return null;
+}
+
+@function family($key) {
+  @if map-has-key($font-family, $key) {
+    @return map-get($font-family, $key);
+  }
+  @warn 'Unknown `#{$key}` in $font-family.';
+  @return null;
+}
+
+@function size($key, $value) {
+  @if map-has-key($font-size, $key) {
+    @return map-get(map-get($font-size, $key), $value);
+  }
+  @warn 'Unknown `#{$key}` in $font-size.';
+  @return null;
+}
+
+@function lineheight($key, $value) {
+  @if map-has-key($line-height, $key) {
+    @return map-get(map-get($line-height, $key), $value);
+  }
+  @warn 'Unknown `#{$key}` in $line-height.';
+  @return null;
+}

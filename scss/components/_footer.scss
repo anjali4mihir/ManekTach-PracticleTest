@@ -1,0 +1,205 @@
+footer {
+    background-color: $interface-slate;
+    padding: 10rem;
+    margin-top: 9.4rem;
+
+    @include media-down(laptop-large) {
+        padding: 6rem;
+    }
+
+    @include media-down(tablet-large) {
+        padding: 3.5rem;
+        margin-top: 6.4rem;
+    }
+
+    @include media-down(mobile) {
+        margin-top: 5rem;
+        padding-top: 5.2rem;
+        padding-bottom: 4.7rem;
+    }
+
+    .about-voitex {
+        @include media-down(mobile) {
+            margin-bottom: 8rem;
+        }
+
+        img {
+            @include media-down(mobile) {
+                height: 2.7rem;
+                object-fit: contain;
+            }
+        }
+        .company-description {
+            @extend %small-para;
+            padding-top: 2.3rem;
+            max-width: 31.7rem;
+
+            @include media-down(mobile) {
+                font-size: size(paragraph, large);
+                line-height: lineheight(paragraph, large);
+                padding-top: 3.7rem;
+                max-width: 100%;
+            }
+        }
+
+        .social-icons {
+            margin-top: 2rem;
+
+            @include media-down(mobile) {
+                margin-top: 5rem;
+            }
+
+            a {
+                margin-right: 1.7rem;
+
+                i {
+                    color: $interface-slate-black;
+                    font-size: 1.4rem;
+                    transition: 0.3s all ease-in;
+
+                    &:hover {
+                        color: $interface-pink;
+                    }
+                }
+            }
+        }
+    }
+    
+    h5 {
+        color: $interface-default-slate;
+        font-family: family(secondary);
+        margin-top: 2rem;
+    }
+
+    ul {
+        padding-top: 3.3rem;
+
+        @include media-down(mobile) {
+            padding-top: 3rem;
+        }
+
+        li {               
+            a {
+                color: $interface-slate-dark;
+                display: block;
+                @extend .o-paragraph-small;
+                transition: 0.3s all ease-in;
+
+                &:hover {
+                    color: $interface-pink;
+                }
+            }
+        }
+    }
+
+    .newsletter-section {
+        p {
+            @extend %small-para;
+            padding-top: 3.3rem;
+        }
+
+        @include media-down(mobile) {
+            margin-top: 5rem;
+
+        }
+    }
+
+    .company-links {
+        padding-left: 7rem;
+
+        @include media-down(tablet-large) {
+            padding-left: 4rem;
+        }
+
+        @include media-down(mobile) { 
+            order: 3;
+            padding: 0;
+        }
+    }
+
+    .industries-links {
+        padding-right: 9rem;
+
+        @include media-down(mobile) { 
+            order: 2;
+            padding: 0;
+        }
+    }
+
+    .solutions-links {
+        @include media-down(mobile) { 
+            order: 2;
+            padding: 0;
+        }
+    }
+    
+
+    .industries-links {
+        padding-left: 5.3rem;
+
+        @include media-down(tablet-large) {
+            padding-left: 8.3rem;
+        }
+
+        @include media-down(tablet) {
+            padding-left: 6.3rem;
+        }
+    }
+
+    .email-container {
+        margin-top: 3rem;
+        border-radius: 0.9rem;
+
+        .email-input {
+            flex: 1;
+            border: none;
+            padding: 1rem 1.5rem;
+            @extend .o-paragraph-small;
+            outline: none;
+            border-radius: 0.9rem;
+
+            &::placeholder {
+                @extend .o-paragraph-small;
+            }
+        }
+
+        .submit-btn {
+            color: $interface-slate-black;
+            @extend %o-paragraph-small;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 0 0.9rem 0.9rem 0; 
+            right: 0;
+            transition: 0.3s all ease-in;
+
+            i {
+                font-size: 1rem;
+                margin-left: 0.7rem;
+            }
+
+            &:hover {
+                background-color: $interface-blue !important;
+                color: $interface-white;
+            }
+        }
+    }
+    .newsletter-section {
+        @include media-down(mobile) {
+            order: 4;
+            padding: 0;
+        }
+    }
+    .footer-btm {
+        margin-top: 8rem;
+        
+        @include media-down(mobile) {
+            order: 5;
+        }
+
+        p {
+            color: $interface-gray;
+            @extend %o-paragraph-small;
+        }
+    }
+}

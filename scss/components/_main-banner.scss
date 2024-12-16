@@ -1,0 +1,232 @@
+.main-banner-section {
+    padding-top: 22.4rem;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/banner-bg-gradient.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    svg {
+        position: absolute;
+        right: 27.2rem;
+        z-index: 2;
+        top: 15.7rem;
+        width: 24.5rem;
+
+        @include media-down(mobile) {
+            display: none;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5); 
+        z-index: -1;
+    }
+
+    &:after {
+        content: "";
+        background-image: url(../images/banner-bg.svg);
+        background-repeat: no-repeat;
+        right: -96rem;
+        top: -86rem;
+        position: absolute;
+        width: 251.6rem;
+        height: 200.2rem;
+
+        @include media-down(desktop-large) {
+            right: -105rem;
+            top: -70rem;
+            width: 240.6rem;
+            height: 175.2rem;
+            background-size: contain;
+        }
+
+        @include media-down(laptop-large) {
+            right: -105rem;
+            top: -49rem;
+            width: 204.6rem;
+            height: 130.2rem;
+            background-size: contain;
+        }
+
+        @include media-down(tablet-large) {
+            right: -105rem;
+            top: -42rem;
+            width: 195.6rem;
+            height: 115.2rem;
+            background-size: contain;
+        }
+
+        @include media-down(tablet) {
+            right: -110rem;
+            top: -30rem;
+            width: 181.6rem;
+            height: 100.2rem;
+            background-size: contain;
+        }
+
+        @include media-down(mobile) {
+            content: none;
+        }
+    }
+
+    .main-banner-top {
+        max-width: 54rem;
+        padding-left: 10rem;
+        z-index: 3;
+
+        @include media-down(laptop-large) {
+            max-width: 48rem;
+            padding-left: 0;
+        }
+
+        @include media-down(mobile) {
+            z-index: 0;
+        }
+
+        h1 {
+            color: $interface-blue;
+            @extend %o-title-h1;
+            font-family: family(secondary);
+        }
+
+        p {
+            color: $interface-blue-dark;
+            @extend %o-paragraph-medium;
+            padding-top: 4.5rem;
+            line-height: 2.8rem;
+
+            @include media-down(laptop-large) {
+                padding-top: 2.5rem;
+            }
+
+            @include media-down(mobile) {
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+                padding-top: 3.6rem;
+            }
+        }
+
+        .connection-btn {
+            margin-top: 7rem;
+
+            @include media-down(laptop-large) {
+                margin-top: 4rem;
+            }
+
+            @include media-down(mobile) {
+                margin-top: 5rem;
+            }
+
+            a {
+                &:last-child {
+                    color: $interface-slate-black;
+                    @extend %o-paragraph-medium;
+                    margin-left: 4.2rem;
+                    transition: 0.3s all ease-in;
+
+                    @include media-down(mobile) {
+                        margin-left: 3.5rem;
+                    }
+                    
+                    i {
+                        font-size: 1rem;
+                        margin-left: 1rem;
+                        margin-top: 0.3rem;
+                    }
+
+                    &:hover {
+                        color: $interface-pink;
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+    .main-banner-btm {
+        margin-top: 16.4rem;
+        z-index: 3;
+
+        @include media-down(tablet) {
+            margin-top: 6.4rem;
+        }
+
+        @include media-down(mobile) {
+            margin-top: -51rem;
+        }
+
+        .main-banner-btm-right {
+            h2 {
+                @extend %o-title-h2;
+                color: $interface-slate-black;
+                max-width: 28rem;
+                font-family: family(secondary);
+            }
+
+            p {
+                @extend %o-paragraph-medium;
+                line-height: 2.8rem;
+                color: $interface-blue-dark;
+                padding-top: 2.5rem;
+                max-width: 39.1rem;
+
+                @include media-down(mobile) {
+                    font-size: size(paragraph, large-laptop);
+                    line-height: lineheight(paragraph, large-laptop);
+                    padding-top: 6rem;
+                }
+            }
+
+            .o-button {
+                margin-top: 3rem;
+
+                @include media-down(mobile) {
+                    padding: 1.3rem 3.2rem 1.7rem 3.2rem;
+                    margin-left: 1.1rem;
+                }
+
+                @include media-down(mobile) {
+                    margin-top: 3.7rem;
+                }
+            }
+        }
+    }
+
+    .mobile-banner {
+        img {
+            @include media-down(tablet) {
+                max-width: 115rem;
+                height: auto;
+                margin-top: -45rem;
+                margin-left: -3rem;
+            }
+        }
+    }
+
+    .main-banner-btm-left {
+        img {
+            width: 100%;
+
+            @include media-down(mobile) {
+                display: none;
+            }
+        }
+    }
+
+    .mobile-banner {
+        display: none;
+
+        @include media-down(mobile) {
+            display: block;
+        }
+    }
+}

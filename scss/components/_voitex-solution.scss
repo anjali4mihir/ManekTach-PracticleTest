@@ -1,0 +1,181 @@
+.voitex-solution {
+    background-color: #BBBEC50F;
+    padding: 12.1rem 20.2rem 21rem;
+    margin-top: 8.9rem;
+
+    @include media-down(desktop-large) {
+        padding: 12.1rem 5.2rem 15rem;
+    }
+
+    @include media-down(laptop-large) {
+        padding: 8rem 5.2rem 8rem;
+    }
+
+    @include media-down(tablet-large) {
+        padding: 5rem 5.2rem 6rem;
+        margin-top: 5.9rem;
+    }
+
+    @include media-down(tablet) {
+        padding: 4rem 0 5rem;
+        margin-top: 3.9rem;
+    }
+
+    @include media-down(mobile) {
+        background-color: transparent;
+        padding: 0 3.5rem;
+        margin-top: 7.8rem;
+    }
+
+    h2 {
+        @extend %o-title-h2;
+        color: $interface-blue;
+        font-family: family(secondary);
+        width: 100%;
+
+        @include media-down(mobile) {
+            max-width: 24.4rem;
+            text-align: left !important;
+        }
+    }
+
+    p {
+        @extend %o-paragraph-medium;
+        color: $interface-blue-dark;
+        max-width: 34.2rem;
+        padding-top: 2.5rem;
+        line-height: 2.8rem;
+
+        @include media-down(laptop-large) {
+            padding-top: 1.5rem;
+            line-height: 2.2rem;
+        }
+
+        @include media-down(mobile) {
+            font-size: size(paragraph, large);
+            line-height: lineheight(paragraph, large);
+            text-align: left !important;
+            padding-top: 3.8rem;
+        }
+    }
+
+    .solution-block {
+        margin-top: 10rem;
+        gap: 12px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include media-down(laptop-large) {
+            margin-top: 5rem;
+            justify-content: center;
+        }
+
+        @include media-down(tablet) {
+            margin-top: 4rem;
+        }
+
+        @include media-down(mobile) {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
+            overflow-y: visible;
+        }
+
+        &.solution-block-desktop {
+            @include media-down(mobile) {
+                display: none !important;
+            }
+        }
+        
+
+        .solution-block-inner {
+            width: 13.5%;
+            padding: 3rem 3rem 3rem 3rem;
+
+            @include media-down(laptop-large) {
+                width: 13%;
+                padding: 1rem 1rem 1rem 1rem;
+            }
+
+            @include media-down(tablet-large) {
+                width: 20%;
+            }
+
+            @include media-down(tablet) {
+                width: 22%;
+            }
+
+            @include media-down(mobile) {
+                scroll-snap-align: start;
+                flex: 1 1 calc(50% - 1rem);
+                margin-right: 0;
+            }
+
+            img {
+                transition: 0.5s ease all;
+                
+                @include media-down(laptop-large) {
+                    height: 20px;
+                    width: auto;
+                    object-fit: contain;
+                }
+
+            }
+            .solution-name {
+                @extend %o-paragraph-medium;
+                color: $interface-blue;
+                font-family: family(secondary);
+                padding-top: 1.9rem;
+            }
+            .solution-des {
+                @extend %o-paragraph-small;
+                color: $interface-blue;
+                padding-top: 1.2rem;
+                opacity: 0.6;
+                line-height: 2rem;
+            }
+
+            &:first-child {
+                background-color: #FFEDF7A3;
+                border-bottom: 0.3rem solid $interface-pink-light;
+            }
+            &:nth-child(2) {
+                background-color: #F6DEF785;
+                border-bottom: 0.3rem solid #9C3FE8;
+            }
+            &:nth-child(3) {
+                background-color: #FFE9CC7A;
+                border-bottom: 0.3rem solid #FF6004;
+            }
+            &:nth-child(4) {
+                background-color: #D5FBDA73;
+                border-bottom: 0.3rem solid #8CE6AA;
+            }
+            &:nth-child(5) {
+                background-color: #008CE71A;
+                border-bottom: 0.3rem solid #009CF8;
+            }
+            &:nth-child(6) {
+                background-color: #A4F8D638;
+                border-bottom: 0.3rem solid #08B689;
+            }
+            &:nth-child(7) {
+                background-color: #FFE9B53D;
+                border-bottom: 0.3rem solid #FFB600;
+            }
+
+            &:hover {
+                img {
+                    transform: scale3d(1.2, 1.2, 1);
+                }   
+            }
+        }
+      
+    }
+
+    
+}
